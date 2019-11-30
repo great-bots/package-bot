@@ -1,6 +1,6 @@
-declare module "dialogflow-fulfillment" {
-  import { DialogflowConversation } from "actions-on-google";
-  import { Request, Response } from "express";
+declare module 'dialogflow-fulfillment' {
+  import { DialogflowConversation } from 'actions-on-google';
+  import { Request, Response } from 'express';
 
   export class Card extends RichResponse {
     constructor(card: string | object);
@@ -212,16 +212,16 @@ declare module "dialogflow-fulfillment" {
   }
 }
 
-declare module "dialogflow-fulfillment/src/rich-responses/rich-response" {
+declare module 'dialogflow-fulfillment/src/rich-responses/rich-response' {
   export const PLATFORMS: {
-    UNSPECIFIED: "PLATFORM_UNSPECIFIED";
-    FACEBOOK: "FACEBOOK";
-    SLACK: "SLACK";
-    TELEGRAM: "TELEGRAM";
-    KIK: "KIK";
-    SKYPE: "SKYPE";
-    LINE: "LINE";
-    VIBER: "VIBER";
-    ACTIONS_ON_GOOGLE: "ACTIONS_ON_GOOGLE";
+    UNSPECIFIED: 'PLATFORM_UNSPECIFIED';
+    FACEBOOK: 'FACEBOOK';
+    SLACK: 'SLACK';
+    TELEGRAM: 'TELEGRAM';
+    KIK: 'KIK';
+    SKYPE: 'SKYPE';
+    LINE: 'LINE';
+    VIBER: 'VIBER';
+    ACTIONS_ON_GOOGLE: 'ACTIONS_ON_GOOGLE';
   };
 }
