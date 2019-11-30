@@ -17,7 +17,7 @@ export const packageBot = functions.https.onRequest((request, response) => {
     const version = agent.parameters.version;
 
     const { stdout, stderr } = await exec(
-      `npx download-size ${name}@${version}`
+      `npx download-size ${name}${version ? `@${version}` : ''}`
     );
 
     if (stdout) agent.add(stdout);
