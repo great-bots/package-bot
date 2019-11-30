@@ -1,5 +1,11 @@
 {
   "name": "package-bot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Jakub Biesiada",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "private": true,
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
@@ -10,9 +16,8 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "10"
+    "node": ">=8"
   },
-  "main": "lib/index.js",
   "dependencies": {
     "dialogflow": "^0.14.1",
     "dialogflow-fulfillment": "^0.6.1",
@@ -22,6 +27,5 @@
   "devDependencies": {
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
-  },
-  "private": true
+  }
 }
