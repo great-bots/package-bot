@@ -12,7 +12,7 @@ export const packageBot = functions.https.onRequest((request, response) => {
   console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
   console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
-  async function weighPackage(agent) {
+  async function weighPackage(agent: WebhookClient) {
     const name = agent.parameters.name;
     const version = agent.parameters.version;
 
