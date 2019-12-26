@@ -1,7 +1,7 @@
 {
   "name": "package-bot",
   "version": "1.0.0",
-  "description": "Check size of npm package before install",
+  "description": "Check the size of the npm package before installation",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/index.js",
@@ -16,7 +16,7 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "dependencies": {
     "actions-on-google": "^2.12.0",
