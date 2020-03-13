@@ -1,8 +1,6 @@
 import * as functions from 'firebase-functions';
 import { WebhookClient } from 'dialogflow-fulfillment';
-import * as util from 'util';
-
-const exec = util.promisify(require('child_process').exec);
+import { exec } from 'child_process';
 
 process.env.DEBUG = 'dialogflow:debug';
 
@@ -16,12 +14,20 @@ export const packageBot = functions.https.onRequest((request, response) => {
     const name = agent.parameters.name;
     const version = agent.parameters.version;
 
-    const { stdout, stderr } = await exec(
-      `npx download-size ${name}${version ? `@${version}` : ''}`
-    );
+    exec(
+      `npm view ${name}${version ? `@${version}` : ''} dist.unpackedSize`,
+      (error, stdout, stderr) => {
+        if (error) agent.add(error.message);
 
-    if (stdout) agent.add(stdout);
-    if (stderr) agent.add(stderr);
+        if (stdout) {
+          agent.add(
+            (Math.round((parseFloat(stdout) / 1000) * 1000) / 1000).toFixed(1)
+          );
+        }
+
+        if (stderr) agent.add(stderr);
+      }
+    );
   }
 
   const intentMap = new Map();
