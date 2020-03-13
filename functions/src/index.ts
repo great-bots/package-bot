@@ -21,7 +21,9 @@ export const packageBot = functions.https.onRequest((request, response) => {
 
         if (stdout) {
           agent.add(
-            (Math.round((parseFloat(stdout) / 1000) * 1000) / 1000).toFixed(1)
+            `${parseFloat(
+              (Math.round((parseFloat(stdout) / 1000) * 1000) / 1000).toFixed(2)
+            )} KiB`
           );
         }
 
