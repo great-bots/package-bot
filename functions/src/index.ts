@@ -20,11 +20,11 @@ export const packageBot = functions.https.onRequest((request, response) => {
         if (error) agent.add(error.message);
 
         if (stdout) {
-          agent.add(
-            `${parseFloat(
-              (Math.round((parseFloat(stdout) / 1000) * 1000) / 1000).toFixed(2)
-            )} KiB`
+          const formattedValue = parseFloat(
+            (Math.round((parseFloat(stdout) / 1000) * 1000) / 1000).toFixed(2)
           );
+
+          agent.add(`${formattedValue} KiB`);
         }
 
         if (stderr) agent.add(stderr);
