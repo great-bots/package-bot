@@ -39,7 +39,7 @@ yarn start
 
 ## Build with
 
-- [Dialogflow](https://dialogflow.com/)
+- [Dialogflow](https://dialogflow.cloud.google.com/)
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
