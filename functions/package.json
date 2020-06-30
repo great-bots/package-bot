@@ -26,6 +26,7 @@
     "firebase-functions": "^3.7.0"
   },
   "devDependencies": {
+    "@types/dialogflow-fulfillment": "^0.6.0",
     "tslint": "^6.1.2",
     "typescript": "^3.9.5"
   }
